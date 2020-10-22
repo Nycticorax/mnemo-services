@@ -101,11 +101,4 @@ class Jobs:
         self.payload = payload
         self.handler_callback = handler_callback
         self.scheduledFor = Jobs.diff(*timeToSchedule) if isinstance (timeToSchedule, list) else timeToSchedule
-    
-if __name__ == '__main__':
-    user_data = { 'blibla':'blo' }
-    # timeToSchedule = [28, 2, 2020, 15, 41]
-    timeToSchedule = 5
-    voucher = Jobs.schedule(timeToSchedule, handler_callback=Jobs.post_job, payload=user_data)
-    res = Jobs.unschedule(voucher)
-    print(res)
+ 
